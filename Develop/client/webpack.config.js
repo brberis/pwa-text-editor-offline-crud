@@ -5,9 +5,6 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-    optimization: {
-    minimize: false
-  },
   entry: {
     main: './src/js/index.js',
     install: './src/js/install.js'
