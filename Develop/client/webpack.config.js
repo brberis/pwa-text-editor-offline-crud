@@ -4,8 +4,11 @@ const WebpackPwaManifest = require('webpack-pwa-manifest')
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: './src/js/index.js',
+  // optimization: {
+  //   minimize: false
+  // },
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -14,6 +17,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './index.html',
       title: 'Webpack Plugin',
+      favicon: './favicon.ico',
     }),
     new WebpackPwaManifest({
         name: 'Just Another Text Editor',

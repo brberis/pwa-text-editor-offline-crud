@@ -2,6 +2,13 @@ import { Workbox } from 'workbox-window';
 import Editor from './editor';
 import './database';
 import '../css/style.css';
+import 'code-mirror-themes/lib/codemirror.css';
+import 'code-mirror-themes/lib/codemirror.js';
+import 'code-mirror-themes/lib/javascript/javascript.js';
+import 'code-mirror-themes/themes/monokai.css';
+
+
+
 
 const main = document.querySelector('#main');
 main.innerHTML = '';
