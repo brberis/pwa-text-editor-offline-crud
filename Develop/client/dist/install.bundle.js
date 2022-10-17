@@ -15,7 +15,7 @@
   \***************************/
 /***/ (() => {
 
-eval("var butInstall = document.getElementById('buttonInstall');\n\n// Logic for installing the PWA\n// Event handler to the `beforeinstallprompt` event\nwindow.addEventListener('beforeinstallprompt', function (event) {\n  event.preventDefault();\n  butInstall.style.visibility = 'visible';\n  butInstall.addEventListener('click', function () {\n    event.prompt();\n    butInstall.setAttribute('disabled', true);\n    butInstall.textContent = 'Installed!';\n  });\n});\n\n// TODO: Implement a click event handler on the `butInstall` element\n// butInstall.addEventListener('click', async () => {\n// });\n\n// TODO: Add an handler for the `appinstalled` event\nwindow.addEventListener('appinstalled', function (event) {\n  console.log('appinstalled', event);\n});\n\n//# sourceURL=webpack://Pwa_Text_Editor/./src/js/install.js?");
+eval("// logic moved to index\n\n//# sourceURL=webpack://Pwa_Text_Editor/./src/js/install.js?");
 
 /***/ })
 

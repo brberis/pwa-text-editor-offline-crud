@@ -1,14 +1,11 @@
-import { Workbox } from 'workbox-window';
 import Editor from './editor';
+
 import './database';
 import '../css/style.css';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/lib/codemirror.js';
 import 'codemirror/mode/javascript/javascript.js';
 import 'codemirror/theme/monokai.css';
-
-
-
 
 const main = document.querySelector('#main');
 main.innerHTML = '';
@@ -30,28 +27,36 @@ if (typeof editor === 'undefined') {
   loadSpinner();
 }
 
-// Check if service workers are supported
-// if ('serviceWorker' in navigator) {
-//   navigator.serviceWorker.register('./service-worker.js').then(function(reg) {
-//       console.log('Successfully registered service worker', reg);
-//   }).catch(function(err) {
-//       console.warn('Error whilst registering service worker', err);
-//   });
-// }
-
-// Check if service workers are supported
-// if ('serviceWorker' in navigator) {
-//   // register workbox service worker
-//   const workboxSW = new Workbox('./service-worker.js');
-//   workboxSW.register();
-// } else {
-//   console.error('Service workers are not supported in this browser.');
-// }
-
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./service-worker.js').then(function(reg) {
-      console.log('Successfully registered service worker', reg);
+    console.log('Successfully registered service worker', reg);
   }).catch(function(err) {
-      console.warn('Error whilst registering service worker', err);
+    console.warn('Error whilst registering service worker', err);
   });
 }
+
+  // Logic for installing the PWA
+  const butInstall = document.getElementById('buttonInstall');
+
+  let deferredPrompt;
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    deferredPrompt = e;
+    butInstall.style.visibility = 'visible';
+  });
+
+  butInstall.addEventListener('click', async () => {
+    if (deferredPrompt !== null) {
+      deferredPrompt?.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        butInstall.setAttribute('disabled', true);
+        butInstall.textContent = 'Installed!';
+        deferredPrompt = null;
+    }
+    }
+  });
+
+  window.addEventListener('appinstalled', (event) => {
+    console.log('appinstalled', event);
+  });
