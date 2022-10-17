@@ -41,5 +41,9 @@ if (typeof editor === 'undefined') {
 
 if ('serviceWorker' in navigator) {
   const wb = new Workbox('./service-worker.js');
-  wb.register();
+  wb.register().then(function(reg) {
+    console.log('Successfully registered service worker', reg);
+  }).catch(function(err) {
+      console.warn('Error whilst registering service worker', err);
+  });
 }
