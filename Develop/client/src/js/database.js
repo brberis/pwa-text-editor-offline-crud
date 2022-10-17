@@ -17,13 +17,13 @@ export const initdb = async () =>
 export const putDb = async (content) => {
   console.log('PUT to the database');
 
-  const contactDb = await openDB('jate', 1);
+  const jateDb = await openDB('jate', 1);
 
-  const tx = contactDb.transaction('jate', 'readwrite');
+  const tx = jateDb.transaction('jate', 'readwrite');
 
   const store = tx.objectStore('jate');
   
-  const request = store.put({ id: id, content: content});
+  const request = store.put({ id: 1, content: content});
   const result = await request;
   console.log('Thw data was saved to the database', result);
 };
@@ -33,10 +33,10 @@ export const getDb = async () => {
   console.log('GET from the database');
 
   // Create a connection to the database database and version we want to use.
-  const contactDb = await openDB('jate', 1);
+  const jateDb = await openDB('jate', 1);
 
   // Create a new transaction and specify the database and data privileges.
-  const tx = contactDb.transaction('jate', 'readonly');
+  const tx = jateDb.transaction('jate', 'readonly');
 
   // Open up the desired object store.
   const store = tx.objectStore('jate');

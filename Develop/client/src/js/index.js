@@ -2,10 +2,10 @@ import { Workbox } from 'workbox-window';
 import Editor from './editor';
 import './database';
 import '../css/style.css';
-import 'code-mirror-themes/lib/codemirror.css';
-import 'code-mirror-themes/lib/codemirror.js';
-import 'code-mirror-themes/lib/javascript/javascript.js';
-import 'code-mirror-themes/themes/monokai.css';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/lib/codemirror.js';
+import 'codemirror/mode/javascript/javascript.js';
+import 'codemirror/theme/monokai.css';
 
 
 
@@ -39,10 +39,18 @@ if (typeof editor === 'undefined') {
 //   });
 // }
 
+// Check if service workers are supported
+// if ('serviceWorker' in navigator) {
+//   // register workbox service worker
+//   const workboxSW = new Workbox('./service-worker.js');
+//   workboxSW.register();
+// } else {
+//   console.error('Service workers are not supported in this browser.');
+// }
+
 if ('serviceWorker' in navigator) {
-  const wb = new Workbox('./service-worker.js');
-  wb.register().then(function(reg) {
-    console.log('Successfully registered service worker', reg);
+  navigator.serviceWorker.register('./service-worker.js').then(function(reg) {
+      console.log('Successfully registered service worker', reg);
   }).catch(function(err) {
       console.warn('Error whilst registering service worker', err);
   });

@@ -5,12 +5,15 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/js/index.js',
-  // optimization: {
-  //   minimize: false
-  // },
+    optimization: {
+    minimize: false
+  },
+  entry: {
+    main: './src/js/index.js',
+    install: './src/js/install.js'
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
