@@ -13,7 +13,7 @@ This PWA Text Editor called Jate features an installation button to facilitate t
 
 ## Screenshot
 
-![alt screenshot](![alt screenshot](https://github.com/brberis/pwa-text-editor-offline-crud/raw/main/assets/images/web.png))
+![alt screenshot](https://github.com/brberis/pwa-text-editor-offline-crud/raw/main/assets/images/web.png)
 
 ## Table of Contents
 
