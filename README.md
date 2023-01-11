@@ -25,7 +25,20 @@ This PWA Text Editor called Jate features an installation button to facilitate t
 
 ## Installation
 
-Clone this project and run `npm install`. You don't need to initialize the database, the following command will do automatically. Finally start the server and build the bundle run this command `npm start`.
+To install this OWA Text Editor, please follow these steps:
+
+1. Clone the repository by running the command git clone: 
+[https://github.com/brberis/pwa-text-editor-offline-crud.git](https://github.com/brberis/pwa-text-editor-offline-crud.git)
+2. Navigate to the root of the project directory using the command `cd repo-name`.
+3. Run `npm install` to install all the necessary dependencies.
+4. Set up the required environment variables by creating a .env file in the root of the project directory and adding the necessary environment variable key-value pairs.
+5. Start the development server by running the command `npm start`
+7. In the browser navigate to `http://localhost:3000` to access the app
+
+### Note:
+- Make sure that you have the latest version of Node.js and npm installed on your machine
+- Make sure you have MongoDB installed and running before start the development server. 
+
 
 ## Deployment
 
