@@ -8,9 +8,18 @@
 ## Description
 
 This project was developed in ES5 JavaScript, Webpack, Babel and Concurrently in dev to manage simultaneously client and server packages. The goal was to create a Text Editor that can be installed as a Progressive Web Application in several platforms.
+
 The app use IndexedDB to store the data offline and Workbox to manage the assets in cache. So that the app can work perfectly without internet in desktop and mobile devices.
+
 This PWA Text Editor called Jate features an installation button to facilitate the client experience.
 
+## User Story
+
+As a user, I want a text editor that can work offline on different platforms and be easy to install, so that I can access my documents even when I don't have an internet connection.
+
+When I open the Text Editor, it is developed using ES5 JavaScript, Webpack, Babel and Concurrently in dev to manage simultaneously client and server packages and can be installed as Progressive Web Application in several platforms. It uses IndexedDB to store my data offline and Workbox to manage the assets in cache. This means that the app can work perfectly without internet on my desktop or mobile devices.
+
+The PWA Text Editor called Jate comes with an installation button which makes it easy for me to install and use, and it features an easy user experience that allows me to work on my documents efficiently.
 ## Screenshot
 
 ![alt screenshot](https://github.com/brberis/pwa-text-editor-offline-crud/raw/main/assets/images/web.png)
